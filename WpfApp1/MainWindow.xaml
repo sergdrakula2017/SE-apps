@@ -1,0 +1,45 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Menu VerticalAlignment="Top" HorizontalAlignment="Left">
+            <MenuItem Header="Чертежи">
+                <MenuItem Header="Open">
+                    <Button Content="..." />
+                    <TextBox Width="200" />
+                </MenuItem>
+                <MenuItem Header="Exit" />
+            </MenuItem>
+            <MenuItem Header="Скрипты" />
+            <MenuItem Header="Настройки">
+                <MenuItem Header="Open">
+                </MenuItem>
+                <MenuItem Header="Exit" />
+            </MenuItem>
+        </Menu>
+
+
+        <DataGrid x:Name="grid" Margin="7,23,215,27" AutoGenerateColumns="True" Loaded="grid_Loaded"   >
+            <DataGrid.Columns>
+                
+                <DataGridTextColumn Header="Текущая версия" Width="100" Binding="{Binding Path=val}"/>
+                <DataGridTextColumn Header="Последняя версия на сервере" Width="150" Binding="{Binding Path=tim}"/>
+                <DataGridTextColumn Header="Загружать прототипы" Width="150" Binding="{Binding Path=tim}"/>
+                <DataGridTextColumn Header="Автор" Width="45" Binding="{Binding Path=tim}"/>
+                <DataGridTextColumn Header="Дата изменения" Width="100" Binding="{Binding Path=tim}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="загрузить_с_сервера" Content="Загрузить с сервера" Margin="0,278,20,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="143" Click="add_Click"/>
+
+        <TextBox HorizontalAlignment="Right" Margin="0,23,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Height="250" />
+        <Button x:Name="загрузить_с_сервера_Copy" Content="Загрузить новую версию" Margin="0,304,20,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="142" Click="add_Click"/>
+        <Button x:Name="загрузить_с_сервера_Copy1" Content="Посмотреть на сайте" Margin="0,332,20,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="142" Click="add_Click"/>
+
+
+    </Grid>
+</Window>
