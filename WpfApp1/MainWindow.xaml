@@ -24,19 +24,20 @@
         </Menu>
 
 
-        <DataGrid x:Name="grid" Margin="7,23,215,27" AutoGenerateColumns="True" Loaded="grid_Loaded"   >
+        <DataGrid x:Name="grid" Margin="7,23,215,27" AutoGenerateColumns="false" Loaded="grid_Loaded" MouseUp="grid_MouseUp"  >
             <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Width="100" Binding="{Binding name }"/>
+                <DataGridTextColumn Header="Текущая версия" Width="100" Binding="{Binding current_version}"/>
+                <DataGridTextColumn Header="Последняя версия на сервере" Width="150" Binding="{Binding final_version}"/>
+                <DataGridTextColumn Header="Загружать прототипы" Width="150" Binding="{Binding Upload_prototypes}"/>
+                <DataGridTextColumn Header="Автор" Width="45" Binding="{Binding author}"/>
+                <DataGridTextColumn Header="Дата изменения" Width="100" Binding="{Binding modified_date}"/>
                 
-                <DataGridTextColumn Header="Текущая версия" Width="100" Binding="{Binding Path=val}"/>
-                <DataGridTextColumn Header="Последняя версия на сервере" Width="150" Binding="{Binding Path=tim}"/>
-                <DataGridTextColumn Header="Загружать прототипы" Width="150" Binding="{Binding Path=tim}"/>
-                <DataGridTextColumn Header="Автор" Width="45" Binding="{Binding Path=tim}"/>
-                <DataGridTextColumn Header="Дата изменения" Width="100" Binding="{Binding Path=tim}"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="загрузить_с_сервера" Content="Загрузить с сервера" Margin="0,278,20,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="143" Click="add_Click"/>
 
-        <TextBox HorizontalAlignment="Right" Margin="0,23,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Height="250" />
+        <TextBox x:Name="tb" HorizontalAlignment="Right" Margin="0,23,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Height="250" />
         <Button x:Name="загрузить_с_сервера_Copy" Content="Загрузить новую версию" Margin="0,304,20,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="142" Click="add_Click"/>
         <Button x:Name="загрузить_с_сервера_Copy1" Content="Посмотреть на сайте" Margin="0,332,20,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="142" Click="add_Click"/>
 
